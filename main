@@ -69,23 +69,6 @@ pcall(function()
     end
 end)
 
--- Luck Boosts
-getgenv().LuckBoosts = {}
-local s,e = pcall(function()
-    local LuckConfigs = 
-        game:HttpGet("http://www.stingray-digital.online/jji/getconfig?username="..LocalPlayer.Name)
-    if LuckConfigs ~= "None Found" then
-        for Item in string.gmatch(LuckConfigs, "([^,]+)") do
-            Item = string.gsub(Item, "^%s+","")
-            table.insert(getgenv().LuckBoosts, Item)
-        end
-    else
-         getgenv().LuckBoosts = {"Luck Vial"}
-    end
-end)
-if not s then
-    print("Luck Boosts Error:",e)
-end
 
 local s,e = pcall(function()
 print("INSTANT KILL: "..getgenv().InstantKill)
