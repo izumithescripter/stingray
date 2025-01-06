@@ -23,21 +23,8 @@ pcall(function()
     end
 end)
 
--- Key system --
-task.spawn(function()
-    if not getgenv().NoFileFunctions then
-        local s,e =pcall(function()
-        loadstring(game:HttpGet("http://www.stingray-digital.online/script/keysystem"))()
-        end)
-        if not s then print(e) end
-    end
-end)
-
-repeat task.wait() until (isfile("JJI_Key.txt") or getgenv().NoFileFunctions)
-print("Key system completed")
-if not getgenv().StingrayLoaded then
 getgenv().StingrayLoaded = true
-print("Script Loaded")
+
 
 -- Init --
 local StartTime = tick()
