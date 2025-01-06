@@ -9,7 +9,6 @@ pcall(function()
         getgenv().NoFileFunctions = true
         print("Faked file functions, reloading...")
     end
-    getgenv().Script = game:HttpGet("http://www.stingray-digital.online/script/jji")
     getgenv().UIScript = game:HttpGet("http://www.stingray-digital.online/script/ui")
     print(string.len(getgenv().Script),string.len(getgenv().UIScript))
     if string.len(getgenv().Script)>=300 then
