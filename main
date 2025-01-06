@@ -281,23 +281,6 @@ pcall(function()
     print(game:HttpGet("http://de1.bot-hosting.net:21265/script/cursemarket?trades="..Msg))
 end)
 
--- Use boosts --
-local LotusActive = LocalPlayer.ReplicatedData.chestOverride
-local CatActive = LocalPlayer.ReplicatedData.luckBoost
-for _, Item in pairs(getgenv().LuckBoosts) do
-    task.wait()
-    if table.find(Loti,Item) and LotusActive.Value == 0 then
-        print(Item.." used:",game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data")
-            :WaitForChild("EquipItem"):InvokeServer(Item))
-    end
-    task.wait(0.5)
-    if LotusActive.Value == 0 then
-        if (not table.find(Cats, Item)) or LocalPlayer.ReplicatedData.luckBoost.duration.Value == 0 then
-            print(Item.." used:",game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Data")
-                :WaitForChild("EquipItem"):InvokeServer(Item))
-        end
-    end
-end
 
 -- Skill spam -- 
 task.wait(1)
